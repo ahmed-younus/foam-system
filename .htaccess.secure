@@ -1,11 +1,11 @@
-# Foam Orders System - Apache Configuration
+# Foam Orders System - Secure Apache Configuration
+# COPY THIS CONTENT TO .htaccess AFTER INSTALLATION IS COMPLETE
 
 # Protect sensitive files
-# Note: Uncomment the line below AFTER completing installation
-# <FilesMatch "(config\.php|install\.sql|\.git)">
-#     Order Allow,Deny
-#     Deny from all
-# </FilesMatch>
+<FilesMatch "(config\.php|install\.sql|install-setup\.php|\.git)">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
 
 # Enable PHP error logging (disable display in production)
 php_flag display_errors Off
