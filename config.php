@@ -18,9 +18,9 @@ if (session_status() === PHP_SESSION_NONE) {
 // IMPORTANT: Update these with your Hostinger database credentials!
 // Find these in: Hostinger Panel > Databases > MySQL Databases
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'foam_orders');  // Your database name (e.g., u123456_foam)
-define('DB_USER', 'root');         // Your database username (e.g., u123456_user)
-define('DB_PASS', '');             // Your database password
+define('DB_NAME', 'u427379374_claude');  // Your database name
+define('DB_USER', 'u427379374_claude');  // Your database username
+define('DB_PASS', 'u427379374_claude');  // Your database password
 define('DB_CHARSET', 'utf8mb4');
 
 // Application Settings

@@ -33,9 +33,9 @@ echo "<p class='info'>Checking if we can connect to database...</p>";
 
 // Get database credentials from user
 $db_host = 'localhost';
-$db_name = 'YOUR_DB_NAME'; // CHANGE THIS
-$db_user = 'YOUR_DB_USER'; // CHANGE THIS
-$db_pass = 'YOUR_DB_PASS'; // CHANGE THIS
+$db_name = 'u427379374_claude';
+$db_user = 'u427379374_claude';
+$db_pass = 'u427379374_claude';
 
 echo "<p class='info'>Host: $db_host<br>Database: $db_name<br>User: $db_user</p>";
 
