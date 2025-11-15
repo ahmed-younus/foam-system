@@ -4,16 +4,23 @@
  * Database and Application Settings
  */
 
+// Enable error reporting for debugging (DISABLE in production!)
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+
 // Start session if not already started
 if (session_status() === PHP_SESSION_NONE) {
-    session_start();
+    @session_start();
 }
 
 // Database Configuration
+// IMPORTANT: Update these with your Hostinger database credentials!
+// Find these in: Hostinger Panel > Databases > MySQL Databases
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'foam_orders');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_NAME', 'foam_orders');  // Your database name (e.g., u123456_foam)
+define('DB_USER', 'root');         // Your database username (e.g., u123456_user)
+define('DB_PASS', '');             // Your database password
 define('DB_CHARSET', 'utf8mb4');
 
 // Application Settings
@@ -27,7 +34,11 @@ define('API_SECRET', 'change-this-secret-key-for-production'); // Change this in
 
 // Application Paths
 define('BASE_PATH', __DIR__);
-define('BASE_URL', ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') ? "https" : "http") . "://$_SERVER[HTTP_HOST]" . dirname($_SERVER['SCRIPT_NAME']));
+// If files are in root, BASE_URL should be just the domain
+// If in subdirectory like /foam-system/, it will include that
+$script_dir = dirname($_SERVER['SCRIPT_NAME']);
+$base_dir = ($script_dir === '/' || $script_dir === '\\') ? '' : $script_dir;
+define('BASE_URL', ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') ? "https" : "http") . "://$_SERVER[HTTP_HOST]" . $base_dir);
 
 // Database Connection
 function get_db_connection() {
